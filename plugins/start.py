@@ -97,7 +97,7 @@ await message.reply_photo("test", START_IMG)
                 ]
             ]
         )
-        await message.reply_text(
+        await message.reply_photo(photo="https://telegra.ph/file/9f4e87e1f5ded4cbd5e02.jpg", caption=START_MSG
             text = START_MSG.format(
                 first = message.from_user.first_name,
                 last = message.from_user.last_name,
