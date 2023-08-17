@@ -14,12 +14,21 @@ from bot import Bot
 from config import ADMINS, FORCE_MSG, START_MSG, CUSTOM_CAPTION, DISABLE_CHANNEL_BUTTON, PROTECT_CONTENT
 from helper_func import subscribed, encode, decode, get_messages
 from database.database import add_user, del_user, full_userbase, present_user
-
+from pyrogram.types import InputFile
 
 
 
 @Bot.on_message(filters.command('start') & filters.private & subscribed)
 async def start_command(client: Client, message: Message):
+    # ... existing code ...
+
+    # Replace 'START_IMG_URL' with the actual URL of your image
+    START_IMG_URL = "https://example.com/path/to/your/image.jpg"
+    start_img = InputFile(START_IMG_URL)
+
+    # Send the image along with the text
+    await message.reply_photo(photo=start_img, caption=START_MSG.format(...))
+    return
     id = message.from_user.id
     if not await present_user(id):
         try:
