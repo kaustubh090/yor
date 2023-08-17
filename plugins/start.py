@@ -20,15 +20,8 @@ from database.database import add_user, del_user, full_userbase, present_user
 
 @Bot.on_message(filters.command('start') & filters.private & subscribed)
 async def start_command(client: Client, message: Message):
-    # ... existing code ...
-
-    # Replace 'START_IMG_URL' with the actual URL of your image
-    START_IMG_URL = "https://telegra.ph/file/9f4e87e1f5ded4cbd5e02.jpg"
-    start_img = InputFile(START_IMG_URL)
-
-    # Send the image along with the text
-    await message.reply_photo(photo=start_img, caption=START_MSG.format(...))
-    return
+    START_IMG = https://telegra.ph/file/9f4e87e1f5ded4cbd5e02.jpg
+await message.reply_photo("test", START_IMG)
     id = message.from_user.id
     if not await present_user(id):
         try:
