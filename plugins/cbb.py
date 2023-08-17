@@ -10,7 +10,24 @@ async def cb_handler(client: Bot, query: CallbackQuery):
     data = query.data
     if data == "about":
         await query.message.edit_text(
-            text = f"<b>○ Creator : <a href='tg://user?id={OWNER_ID}'>This Person</a>\n○ Language : <code>Python3</code>\n○ Library : <a href='https://docs.pyrogram.org/'>Pyrogram asyncio {__version__}</a>\n○ Source Code : <a href='https://github.com/CodeXBotz/File-Sharing-Bot'>Click here</a>\n○ Channel : @CodeXBotz\n○ Support Group : @CodeXBotzSupport</b>",
+            text = f"<b>Premium Benefits & Perks</b>
+Direct Channel Links, No Ad Links
+Special Access In Events
+
+<b>Pricing Rates</b>
+1 Day - INR 20
+7 Days - INR 40
+1 Month - INR 100
+3 Months - INR 200
+6 Months - INR 400
+9 Months - INR 600
+12 Months - INR 800    
+
+<b>Want To Buy?</b>
+Pay Using UPI killuaog@upi
+Send Screenshot to @killua_og and in this bot (To Process Auto Verification)
+
+<b>We Have Limited Seats For Premium Users</b>",
             disable_web_page_preview = True,
             reply_markup = InlineKeyboardMarkup(
                 [
