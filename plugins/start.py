@@ -23,7 +23,7 @@ async def start_command(client: Client, message: Message):
     # ... existing code ...
 
     # Replace 'START_IMG_URL' with the actual URL of your image
-    START_IMG_URL = "https://example.com/path/to/your/image.jpg"
+    START_IMG_URL = "https://telegra.ph/file/9f4e87e1f5ded4cbd5e02.jpg"
     start_img = InputFile(START_IMG_URL)
 
     # Send the image along with the text
