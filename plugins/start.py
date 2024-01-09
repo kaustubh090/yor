@@ -14,16 +14,12 @@ from bot import Bot
 from config import ADMINS, FORCE_MSG, START_MSG, CUSTOM_CAPTION, DISABLE_CHANNEL_BUTTON, PROTECT_CONTENT
 from helper_func import subscribed, encode, decode, get_messages
 from database.database import add_user, del_user, full_userbase, present_user
-from pyrogram.types import InputFile
-
 
 
 
 
 @Bot.on_message(filters.command('start') & filters.private & subscribed)
 async def start_command(client: Client, message: Message):
-    START_IMG = https://telegra.ph/file/9f4e87e1f5ded4cbd5e02.jpg
-await message.reply_photo("test", START_IMG)
     id = message.from_user.id
     if not await present_user(id):
         try:
@@ -92,12 +88,12 @@ await message.reply_photo("test", START_IMG)
         reply_markup = InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("😊 Premium", callback_data = "about"),
+                    InlineKeyboardButton("😊 About Me", callback_data = "about"),
                     InlineKeyboardButton("🔒 Close", callback_data = "close")
                 ]
             ]
         )
-        await message.reply_photo(photo="https://telegra.ph/file/9f4e87e1f5ded4cbd5e02.jpg", caption=START_MSG
+        await message.reply_text(
             text = START_MSG.format(
                 first = message.from_user.first_name,
                 last = message.from_user.last_name,
